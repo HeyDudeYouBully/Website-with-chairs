@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+  	<link href="styles/style.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <title>Моя тестовая страница</title>
+  </head>
+  <body>
+  	<h1>A website with chairs.</h1>
+    <img src="images/levis-safari-1018-min.png" alt = "Сейчас вы увидите стул">
+    <p>У стула было три друга</p>
+    <ul>
+    	<li>Железный стул</li>
+    	<li>Стеклянный стол</li>
+    	<li>Бетонная табуретка</li>
+    	<p>В один момент этих четверых друзей выставили на продажу...</p>
+    	<a href="https://www.google.com/search?q=%D0%94%D0%B5%D1%88%D0%B5%D0%B2%D1%8B%D0%B5+%D1%81%D1%82%D1%83%D0%BB%D1%8C%D1%8F&sxsrf=ALeKk03N_JFRQBzgiO00tLdsPW8PSy4srg:1622040942571&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiEhMWxzefwAhWktYsKHTeLB-MQ_AUoAXoECAIQAw&biw=1920&bih=969">Найдите их по этой ссылке и получите 10000000000 ГрИвеНь</a>
+    </ul>
+
+    <!-- <script src="/scripts/main.js"></script> -->
+<button>Change user</button>
+    <script>
+    
+  document.querySelector('html').onclick = function() {
+    alert('Ouch! Stop poking me!');
+}
+var myImage = document.querySelector('img');
+
+myImage.onclick = function() {
+    var mySrc = myImage.getAttribute('src');
+    if(mySrc === 'images/firefox-icon.png') {
+      myImage.setAttribute ('src','images/firefox2.png');
+    } else {
+      myImage.setAttribute ('src','images/firefox-icon.png');
+    }
+}
+
+var myButton = document.querySelector('button');
+var myHeading = document.querySelector('h1');
+function setUserName() {
+  var myName = prompt('Please enter your name.');
+  localStorage.setItem('name', myName);
+  myHeading.textContent = 'You seeing now the best chairs in the universe, ' + myName;
+}
+if(!localStorage.getItem('name')) {
+  setUserName();
+} else {
+  var storedName = localStorage.getItem('name');
+  myHeading.textContent = 'You seeing now the best chairs in the universe, ' + storedName;
+}
+myButton.onclick = function() {
+  setUserName();
+}
+    </script>
+<script src="scripts/main.js"></script>
+  </body>
+</html> 
